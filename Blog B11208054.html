@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【球場補給站】不只是個長方形！開箱籃球場黑科技</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        metal: {
+                            50: '#f4f4f5',
+                            100: '#e4e4e7',
+                            200: '#d4d4d8',
+                            300: '#a1a1aa',
+                            400: '#71717a',
+                            500: '#52525b',
+                            600: '#3f3f46',
+                            700: '#27272a',
+                            800: '#18181b',
+                            900: '#09090b',
+                        },
+                        neon: {
+                            orange: '#ff6b00',
+                            blue: '#00d4ff',
+                            silver: '#e2e8f0'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                        body: ['Noto Sans TC', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09090b;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .metallic-bg {
+            background: linear-gradient(135deg, #18181b 0%, #27272a 50%, #09090b 100%);
+            position: relative;
+        }
+
+        .glass-card {
+            background: rgba(39, 39, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to bottom right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .neon-border-orange {
+            border-left: 4px solid #ff6b00;
+            box-shadow: -10px 0 20px -10px rgba(255, 107, 0, 0.5);
+        }
+
+        .hero-mesh {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        .content-section {
+            transition: transform 0.3s ease;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3f3f46;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff6b00;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-neon-orange selection:text-white">
+
+    <!-- Hero Banner Section -->
+    <header class="relative h-[70vh] w-full overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src='https://opal.google/board/blobs/bbd22121-62fc-4d8f-a139-9055b88723d5' alt='Basketball Court Hero' class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000" />
+            <div class="absolute inset-0 bg-gradient-to-t from-metal-900 via-transparent to-metal-900/50"></div>
+            <div class="absolute inset-0 hero-mesh"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-5xl">
+            <span class="inline-block px-4 py-1 mb-6 text-xs font-bold tracking-widest uppercase bg-neon-orange text-black rounded-full animate-bounce">
+                球場補給站 • 特別企劃
+            </span>
+            <h1 class="font-display text-5xl md:text-7xl font-extrabold leading-tight tracking-tighter text-white mb-6">
+                不只是個<span class="text-neon-orange">長方形</span>！<br/>
+                開箱籃球場的「前世今生」
+            </h1>
+            <p class="text-lg md:text-xl text-metal-300 max-w-2xl mx-auto font-light leading-relaxed">
+                從桃子筐到LED玻璃地板，一場關於空間、幾何與黑科技的深度探險。
+            </p>
+        </div>
+    </header>
+
+    <main class="relative z-10 -mt-20 px-4 pb-24 max-w-6xl mx-auto">
+        
+        <!-- Intro Card -->
+        <section class="glass-card p-8 md:p-12 rounded-3xl mb-16 border-t border-white/20">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="text-6xl animate-float">🌟</div>
+                <div>
+                    <h2 class="text-3xl font-display font-bold mb-4 text-white">前言：那個讓我們熱血沸騰的地方</h2>
+                    <p class="text-metal-300 leading-loose">
+                        不管是凌晨四點一個人的投籃練習，還是下班後與三五好友在場上鬥牛，籃球場對每個熱愛這項運動的人來說，總有一種難喻的魔力。這不僅是規則的辯證場域，更是我們的戰場。今天，讓我們用知性視角，重新解構這塊隱藏大量科學與歷史的空間。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Grid (Bento Style) -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <!-- Section 1: Standard & Height -->
+            <section class="md:col-span-7 glass-card p-8 rounded-3xl content-section neon-border-orange">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-neon-orange text-2xl font-bold font-display">01.</span>
+                    <h2 class="text-2xl font-bold text-white">這塊地，到底要多大才專業？</h2>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
+                        <h3 class="text-neon-orange font-bold mb-2">區域文化差異</h3>
+                        <p class="text-metal-300 text-sm leading-relaxed">
+                            <strong class="text-white">FIBA：</strong> 28 x 15 公尺，國際標準規範。<br/>
+                            <strong class="text-white">NBA：</strong> 28.65 x 15.24 公尺，三分線更遠，挑戰極限。
+                        </p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
+                        <h3 class="text-neon-orange font-bold mb-2">黃金高度：3.05m</h3>
+                        <p class="text-metal-300 text-sm leading-relaxed">
+                            全世界統一的 10 英呎，源於奈史密斯博士掛籃筐時的陽台高度。這個「歷史意外」定義了百年的垂直高度學。
+                        </p>
+                    </div>
+                    <p class="text-metal-400 text-sm italic">
+                        * 專業籃板多由強化玻璃製成，追求的不是硬度，而是優質的「能量回饋」。
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2: History (The Key) -->
+            <section class="md:col-span-5 glass-card p-8 rounded-3xl content-section bg-gradient-to-br from-metal-800 to-metal-900 border-r border-neon-orange/30">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-neon-orange text-2xl font-bold font-display">02.</span>
+                    <h2 class="text-2xl font-bold text-white">為什麼禁區叫「鑰匙孔」？</h2>
+                </div>
+                <div class="space-y-4 text-metal-300">
+                    <p>
+                        回溯 1940 年代，禁區並非長方形。早期禁區窄長連接著圓形罰球弧，酷似舊式「鑰匙」，故稱 <span class="text-white font-mono bg-white/10 px-2 py-0.5 rounded">The Key</span>。
+                    </p>
+                    <div class="py-4 border-y border-white/10 my-4">
+                        <span class="block text-xs uppercase tracking-tighter text-metal-500 mb-2">Milestones</span>
+                        <ul class="text-sm space-y-2">
+                            <li>• 1891: 桃子筐誕生</li>
+                            <li>• 1979: NBA 正式啟用三分線</li>
+                            <li>• Post-War: 柏油路街頭文化興起</li>
+                        </ul>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        三分線的出現，將禁區肉搏轉化為「空間設計戰」，徹底改寫現代籃球。
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 3: Materials (Full Width) -->
+            <section class="md:col-span-12 glass-card p-8 md:p-12 rounded-3xl content-section overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-neon-orange/10 blur-[100px] rounded-full"></div>
+                <div class="relative z-10 flex flex-col md:flex-row gap-10">
+                    <div class="md:w-1/3">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="text-neon-orange text-2xl font-bold font-display">03.</span>
+                            <h2 class="text-3xl font-bold text-white">這地板，<br/>是專業還是業餘？</h2>
+                        </div>
+                        <p class="text-metal-400">
+                            腳掌會告訴你真相。從北美硬楓木到現代 PP 組合板，每一層材料都是為了守護你的膝蓋。
+                        </p>
+                    </div>
+                    <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-6 bg-metal-900/50 rounded-2xl border border-white/5">
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                                <span class="w-2 h-2 bg-neon-orange rounded-full"></span> 北美硬楓木
+                            </h4>
+                            <p class="text-sm text-metal-400">微孔結構充當天然避震器，提供極佳磨擦力與能量回饋。</p>
+                        </div>
+                        <div class="p-6 bg-metal-900/50 rounded-2xl border border-white/5">
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                                <span class="w-2 h-2 bg-neon-blue rounded-full"></span> 戶外壓克力
+                            </h4>
+                            <p class="text-sm text-metal-400">抗 UV 且排水快速，雖然腳感較硬，但卻是全天候作戰首選。</p>
+                        </div>
+                        <div class="p-6 bg-metal-900/50 rounded-2xl border border-white/5">
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                                <span class="w-2 h-2 bg-white rounded-full"></span> 安全細節
+                            </h4>
+                            <p class="text-sm text-metal-400">防撞墊、防眩光燈具，這些知性細節是球場素質的體現。</p>
+                        </div>
+                        <div class="p-6 bg-metal-900/50 rounded-2xl border border-white/5">
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                                <span class="w-2 h-2 bg-red-500 rounded-full"></span> 濕氣警報
+                            </h4>
+                            <p class="text-sm text-metal-400">木質地板受潮是「斷筋」殺手，專業賽事對濕度控制近乎偏執。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Social Aspect -->
+            <section class="md:col-span-6 glass-card p-8 rounded-3xl content-section border-b-2 border-metal-700">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-neon-orange text-2xl font-bold font-display">04.</span>
+                    <h2 class="text-2xl font-bold text-white">球場日常：實力與社會</h2>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex gap-4">
+                        <span class="text-neon-orange">#</span>
+                        <p class="text-sm text-metal-300">「報隊」潛規則：贏家留下是種社會契約，但也面臨公平性與休閒權益的平衡。</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-neon-orange">#</span>
+                        <p class="text-sm text-metal-300">鄰里兩難：運球聲與強光是居民的噩夢。熄燈與禁打時間是社群生活的妥協藝術。</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Section 5: Future Tech (The 2077 Vibe) -->
+            <section class="md:col-span-6 glass-card p-8 rounded-3xl content-section bg-metal-900 relative group overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-tr from-neon-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="flex items-center gap-3 mb-6 relative z-10">
+                    <span class="text-neon-blue text-2xl font-bold font-display tracking-tighter animate-pulse-slow">FUTURE</span>
+                    <h2 class="text-2xl font-bold text-white">歡迎來到 2077 年！</h2>
+                </div>
+                <div class="space-y-4 text-sm text-metal-300 relative z-10">
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 text-neon-blue">⚡</div>
+                        <p><strong class="text-white">LED 玻璃地板：</strong> ASB GlassFloor 讓場地隨時變換邊界，即時顯示命中率。</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 text-neon-blue">♻️</div>
+                        <p><strong class="text-white">Nike Grind：</strong> 回收舊鞋製成鋪面，環保與效能的完美交織。</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 text-neon-blue">🕶️</div>
+                        <p><strong class="text-white">AR 戰略模式：</strong> 智慧眼鏡投射戰術路徑，球場化身大型訓練儀。</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Conclusion -->
+        <footer class="mt-16 text-center">
+            <div class="inline-block p-[1px] rounded-full bg-gradient-to-r from-transparent via-neon-orange to-transparent w-full mb-12"></div>
+            <h2 class="text-4xl font-display font-extrabold text-white mb-6">下一次踏上球場⋯⋯</h2>
+            <div class="max-w-2xl mx-auto text-metal-400 leading-relaxed space-y-4">
+                <p>
+                    籃球運動發展至今百餘年，這塊長方形土地不僅承載了無數球員的汗水與夢想，更見證了人類在工程、材料與社會心理學上的進步。
+                </p>
+                <p class="text-white font-bold text-xl italic">
+                    「話說回來，熱身完了嗎？準備好要『報隊』了嗎？我們場上見！🏀」
+                </p>
+            </div>
+            
+            <div class="mt-12 flex justify-center">
+                <button class="group relative px-8 py-4 font-bold text-black bg-neon-orange rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,107,0,0.4)]">
+                    <span class="relative z-10">分享這篇開箱</span>
+                    <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </button>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Subtle scroll reveal effect
+        const sections = document.querySelectorAll('.content-section');
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
